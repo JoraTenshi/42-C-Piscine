@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jora <jora@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jcallejo <jcallejo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 11:58:36 by jora              #+#    #+#             */
-/*   Updated: 2024/03/20 12:03:35 by jora             ###   ########.fr       */
+/*   Updated: 2024/03/20 19:45:04 by jcallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ char	*get_firstline(char	**map, char *filename)
 	char	*fl;
 
 	i = 0;
-	fl = (char *)malloc (50 * sizeof(char));
-	if (fl == NULL)
-		exit (1);
+	ft_malloc(fl);
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
@@ -48,6 +46,7 @@ char	*get_firstline(char	**map, char *filename)
 		else
 			fl[i++] = c;
 	}
+	fl[i] = '\0';
 	return (fl);
 }
 

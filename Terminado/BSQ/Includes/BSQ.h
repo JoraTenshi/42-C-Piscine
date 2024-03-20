@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   BSQ.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jora <jora@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jcallejo <jcallejo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 11:52:08 by jora              #+#    #+#             */
-/*   Updated: 2024/03/20 12:08:48 by jora             ###   ########.fr       */
+/*   Updated: 2024/03/20 16:07:12 by jcallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BSQ_H
 # define BSQ_H
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
+
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+
 void	open_file(char *filename, int *fd);
 char	*get_firstline(char	**map, char *filename);
 int		ft_strlen(char *str);
