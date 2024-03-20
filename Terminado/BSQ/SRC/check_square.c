@@ -6,52 +6,11 @@
 /*   By: jora <jora@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:10:25 by jcallejo          #+#    #+#             */
-/*   Updated: 2024/03/20 10:44:43 by jora             ###   ########.fr       */
+/*   Updated: 2024/03/20 12:07:16 by jora             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-char	*get_firstline(char	**map, char *filename)
-{
-	int		i;
-	int		fd;
-	char	c;
-	char	*fl;
-
-	i = 0;
-	fl = (char *)malloc (50 * sizeof(char));
-	if (fl == NULL)
-		exit (1);
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-	{
-		write(1, "Error reading file\n", 19);
-		exit (1);
-	}
-	while (read(fd, &c, 1))
-	{
-		if (c == '\n')
-			break ;
-		else
-			fl[i++] = c;
-	}
-	return (fl);
-}
+#include "BSQ.h"
 
 void	check_characters(char **map, char *firstline)
 {

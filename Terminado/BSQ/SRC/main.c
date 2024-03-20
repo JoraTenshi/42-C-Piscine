@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jora <jora@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/15 08:55:08 by jcallejo          #+#    #+#             */
-/*   Updated: 2024/03/20 12:48:14 by jora             ###   ########.fr       */
+/*   Created: 2024/03/18 12:49:39 by jcallejo          #+#    #+#             */
+/*   Updated: 2024/03/20 12:08:41 by jora             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "BSQ.h"
 
-char *ft_strjoin(int size, char **strs, char *sep)
+int	main(int argc, char **argv)
 {
-	char	*aux;
+	char	**map;
+	int		rows;
+	int		columns;
 	int		i;
-	int		j;
-	int		a;
-	
-	i = 0;
-	a = 0;
-	aux = (int *)malloc (sizeof(strs) * sizeof(int));
-	while (i < size)
+
+	i = 1;
+	if (argc < 2)
 	{
-		j = 0;
-		while (strs[i][j] != '\0')
-			aux[a++] = strs[i][j++];
-		j = 0;
-		while (sep[j] != '\0' && i != size -1)
-			aux[a++] = sep[j++];
-		i++;
 	}
-	aux[a] = '\0';
-	return (aux);
+	else
+	{
+		while (i < argc)
+		{
+			is_valid(argv[i]);
+			read_map(argv[i], map, &rows, &columns);
+			i++;
+		}
+	}
 }

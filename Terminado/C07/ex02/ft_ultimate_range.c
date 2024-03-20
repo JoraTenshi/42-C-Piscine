@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcallejo <jcallejo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jora <jora@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 09:23:21 by jcallejo          #+#    #+#             */
-/*   Updated: 2024/03/15 12:27:18 by jcallejo         ###   ########.fr       */
+/*   Updated: 2024/03/20 12:32:34 by jora             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
@@ -32,22 +33,28 @@ int	ft_ultimate_range(int **range, int min, int max)
 	*range = aux;
 	while (max > min)
 	{
-		*range[i] = min;
+		aux[i] = min;
 		min++;
 		i++;
 	}
 	return (i);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
 {
-	int	**p = NULL;
-	int	*ptr = NULL;
+	int	*temp;
+	int	i;
+	int	size;
 
-	*ptr = ft_ultimate_range(p, 1, 6);
-	**p = *ptr;
-	printf("%d ", **p);
+	i = 0;
+	size = ft_ultimate_range(&temp, 1, 6);
+	while (i < size)
+	{
+		printf("%d\n", temp[i]);
+		i++;
+	}
 	return (0);
 }
+*/

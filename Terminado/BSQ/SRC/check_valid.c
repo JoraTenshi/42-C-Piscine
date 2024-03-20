@@ -6,35 +6,11 @@
 /*   By: jora <jora@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 12:59:36 by jcallejo          #+#    #+#             */
-/*   Updated: 2024/03/20 10:57:20 by jora             ###   ########.fr       */
+/*   Updated: 2024/03/20 12:07:20 by jora             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-
-void	open_file(char *filename, int *fd)
-{
-	*fd = open(filename, O_RDONLY);
-	if (fd == -1)
-	{
-		write(1, "Error reading file\n", 19);
-		exit (1);
-	}
-}
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include "BSQ.h"
 
 void	check_first_line(char *cstr)
 {
@@ -56,18 +32,6 @@ void	check_first_line(char *cstr)
 		}
 		a++;
 	}
-}
-
-char	*ft_malloc(char *str)
-{
-	str = (char *)malloc (50 * sizeof(char));
-	if (*str == NULL)
-	{
-		write (1, "Malloc error\n", 13);
-		exit (1);
-	}
-	else
-		return (str);
 }
 
 void	is_valid(char *filename)
