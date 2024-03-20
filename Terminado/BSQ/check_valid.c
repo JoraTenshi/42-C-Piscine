@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_valid.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcallejo <jcallejo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jora <jora@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 12:59:36 by jcallejo          #+#    #+#             */
-/*   Updated: 2024/03/19 18:37:42 by jcallejo         ###   ########.fr       */
+/*   Updated: 2024/03/20 10:57:20 by jora             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,12 @@ void	is_valid(char *filename)
 	char	c;
 	int		fd;
 	int		i;
+	int		csize;
 
 	i = 0;
 	open_file(filename, &fd);
 	ft_malloc(cstr);
+	csize = ft_strlen(cstr);
 	while (read(fd, &c, 1))
 	{
 		if (c == '\n')
@@ -88,7 +90,7 @@ void	is_valid(char *filename)
 			cstr[i++] = c;
 	}
 	i = 0;
-	while (cstr[i] >= 48 && cstr[i] <= 57)
+	while ((cstr[i] >= 48 && cstr[i] <= 57) && (i < csize - 5))
 		i++;
 	check_first_line(cstr[i]);
 	free (cstr);

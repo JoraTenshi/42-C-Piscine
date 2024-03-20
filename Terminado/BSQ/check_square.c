@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_square.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcallejo <jcallejo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jora <jora@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:10:25 by jcallejo          #+#    #+#             */
-/*   Updated: 2024/03/19 16:53:42 by jcallejo         ###   ########.fr       */
+/*   Updated: 2024/03/20 10:44:43 by jora             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,6 @@ void	is_square(char **map)
 			exit (1);
 		i++;
 	}
-	if (i - 1 != rlen)
-		exit (1);
 }
 
 void	check_square(char **map, char *filename)
